@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jerry Jia BlackJack</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/blackjack.css">
+    <script src="js/jquery-2.1.3.js">
+    </script>
+    <script src="js/jquery-ui.js">
+    </script>
+    <script src="js/blackjack.js">
+    </script>
+
+</head>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#Deal').click(function() {
+        makeDeck();
+        dealCards();
+        var dealercard = '';
+        $.each(dealerHand, function(index, value) {
+            if (index === 0)
+                dealercard += "<img src = \'" + value.url + "\''>";
+            else
+                dealercard += "<img src = \'" + "images/BackVertical.png" + "\''>";
+        });
+
+        var playerCard = "";
+        $.each(playerHand, function(index, value) {
+            playerCard += "<img src = \'" + value.url + "\''>";
+        });
+        $('#dealerCards').html(dealercard);
+        $('#playerCards').html(playerCard);
+        $('#play').hide();
+    });
+});
+
+$(document).ready(function() {
+    $('#Hit').click(function() {
+        hit();
+        var playerCard = "";
+        $.each(playerHand, function(index, value) {
+            playerCard += "<img src = \'" + value.url + "\''>";
+        });
+        $('#playerCards').html(playerCard);
+    });
+
+});
+$(document).ready(function() {
+    $('#Stand').click(function() {
+        var dealercard = '';
+        $.each(dealerHand, function(index, value) {
+            dealercard += "<img src = \'" + value.url + "\''>";
+        });
+        $('#dealerCards').html(dealercard);
+    });
+
+});
+$(document).ready(function() {
+    $('#NewGame').click(function() {
+        $('#dealerCards').empty();
+        $('#playerCards').empty();
+    });
+
+});
+</script>
+
+<body>
+    <div style="text-align:center">
+            <h1>Blackjack</h1>
+            <h2>Dealer wins all ties</h2>
+
+                <input class='input' type='message' value='place your bet amount' name='betA' id='betAmount'>
+                <input class='input' type='message' value='messagesbet' name='betA' id='place'>
+                <input class='input' type='message' value='player' name='betA' id='PlayerScore'>
+                <input class='input' type='message' value='dealer' name='betA' id='DealerScore'>
+
+            </div>
+
+            <div id='playerCards'></div>
+            <div id="dealerCards"> </div>
+
+
+            <div>
+                <input class="button" type="button" value="Deal" id="Deal" disabled />
+                <input class="button" type="button" value="Bet" id="Bet" onclick="javascript:bett();" />
+                <input class='button' type='button' value="Hit" id="Hit" disabled>
+                <input class='button' type='button' value="Stand" onclick="javascript:stand();" id="Stand" disabled>
+                <input class='button' type='button' value="doubleDown" onclick="javascript:doubleDown()" id="doubleDown" disabled>
+                <input class="button" type="button" value="New Game" id="NewGame" onclick="javascript:newGame()" disabled />
+            </div>
+    </div>
+
+
+</body>
+
+</html
