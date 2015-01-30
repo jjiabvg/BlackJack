@@ -20,6 +20,7 @@
     .input {
         width: 450px;
         font-size: 16px;
+        font-family: Georgia, serif;
         background: #495C70;
         padding: 30px 30px 15px 30px;
         border: 5px solid #53687E;
