@@ -16,32 +16,20 @@
         background: #60676c;
         background-image: url("zenbg-1.png"), url("zenbg-2.png");
         background-repeat: repeat-x, repeat;
-
-
-
     }
     .input {
-        border-radius: 3px;
+        width: 450px;
+        font-size: 16px;
+        background: #495C70;
+        padding: 30px 30px 15px 30px;
+        border: 5px solid #53687E;
+        background: transparent;
         border: none;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
-        transition: all 0.2s linear;
-        font-family: "Helvetica Neue", sans-serif;
-        font-size: 13px;
-        color: #222222;
-        position: relative;
-        height: 36px;
-        width: 300px;
-        padding-left: 30px;
-        &::-webkit-input-placeholder {
-            color: #999999;
-        }
-        &:-moz-placeholder {
-            color: #999999;
-        }
-        &:focus {
-            box-shadow: 0 1px 0 #2392F3 inset, 0 -1px 0 #2392F3 inset, 1px 0 0 #2392F3 inset, -1px 0 0 #2392F3 inset, 0 0 4px rgba(35, 146, 243, 0.5);
-            outline: none;
-        }
+        border-bottom: 1px dashed #83A4C5;
+        width: 275px;
+        outline: none;
+        padding: 0px 0px 0px 0px;
+        font-style: italic;
     }
     h1 {
         font-family: Georgia, serif;
@@ -71,7 +59,6 @@
         font-weight: normal;
         font-style: normal;
     }
-   
     h1:before, h1:after {
         content: " - "
     }
